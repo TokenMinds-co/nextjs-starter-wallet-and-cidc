@@ -29,6 +29,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }} # Your server's SSH private key
           debug: true
           script: |
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
+            npm --help
             cd next-with-gh-actions/ # Specify the path to your app directory on the server
             git pull origin staging
             touch .env
