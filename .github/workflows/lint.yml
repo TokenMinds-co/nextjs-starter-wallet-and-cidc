@@ -11,14 +11,12 @@ permissions:
 
 jobs:
   run-linters:
-    name: Run linters
+    name: Linting
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v3
-        with:
-          ref: staging
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -26,9 +24,7 @@ jobs:
           node-version: 20
 
       - name: Install Node.js dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
+        run: npm run lint

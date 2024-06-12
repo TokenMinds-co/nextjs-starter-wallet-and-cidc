@@ -3,6 +3,12 @@ import { useRouter } from "next/router";
 
 export default function Home() {
   const meong = "Meong!";
+
+  const kucing = () => {
+    console.log(meong);
+
+    return meong;
+  };
   
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -18,7 +24,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            B'y meong{" "}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -50,7 +56,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
+            Docs hello therer{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
