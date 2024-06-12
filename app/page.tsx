@@ -1,14 +1,9 @@
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 
 export default function Home() {
-  const meong = "";
-
-  const toBeMeong = () => {
-    const meong = "meong";
-    console.log(meong);
-  };
-
+  const meong = "Meong!";
+  
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -23,7 +18,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{" "}
+            B'y{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
