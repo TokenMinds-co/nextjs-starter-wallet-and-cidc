@@ -1,4 +1,4 @@
-name: Lint
+name: Check
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  run-linters:
+  linting:
     name: Linting
     runs-on: ubuntu-latest
 
