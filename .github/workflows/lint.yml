@@ -1,0 +1,30 @@
+name: Lint
+
+on:
+  pull_request:
+    branches:
+      - staging
+
+permissions:
+  checks: write
+  contents: write
+
+jobs:
+  run-linters:
+    name: Linting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Node.js dependencies
+        run: npm install
+
+      - name: Run linters
+        run: npm run lint
