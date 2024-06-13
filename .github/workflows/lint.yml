@@ -1,16 +1,17 @@
-name: Lint
+name: Check
 
 on:
   pull_request:
     branches:
       - staging
+      - main
 
 permissions:
   checks: write
   contents: write
 
 jobs:
-  run-linters:
+  linting:
     name: Linting
     runs-on: ubuntu-latest
 

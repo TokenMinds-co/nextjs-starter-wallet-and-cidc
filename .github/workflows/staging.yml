@@ -3,11 +3,11 @@ name: Deployment
 on:
   push:
     branches:
-      - main
+      - staging
 
 jobs:
   deploy:
-    name: Deploy to Release
+    name: Deploy to Staging
     runs-on: ubuntu-latest
 
     steps:
@@ -24,9 +24,9 @@ jobs:
           script: |
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
-            cd projects/nextjs-starter-wallet-and-cidc-main
-            git checkout main
+            cd projects/nextjs-starter-wallet-and-cidc-staging
+            git checkout staging
             git pull
             npm ci
             npm run build
-            pm2 restart ecosystem.main.config.js
+            pm2 restart ecosystem.staging.config.js
