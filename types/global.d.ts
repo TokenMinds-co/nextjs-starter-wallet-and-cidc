@@ -13,4 +13,8 @@ declare global {
   }
 
   interface CompleteParamsProps extends SearchParamsProps, ParamsProps {}
+
+  interface ChildrenProps {
+    children: React.ReactNode;
+  }
 }
